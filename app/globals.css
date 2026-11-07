@@ -1,30 +1,253 @@
 :root {
   color-scheme: light;
-  font-family: Georgia, "Times New Roman", serif;
-  background: #f4f5ef;
-  color: #172f28;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  background: #f6f1e8;
+  color: #252446;
 }
 
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 12% 18%, rgb(255 199 122 / 45%), transparent 28rem),
+    radial-gradient(ellipse at 91% 78%, rgb(176 216 201 / 55%), transparent 30rem), #f6f1e8;
 }
+
 main {
-  max-width: 760px;
+  width: min(100% - 40px, 560px);
   margin: 0 auto;
-  padding: 12vh 24px;
+  padding: 62px 0 42px;
 }
+
+.page-heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.eyebrow,
+.display-caption {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #d66b55;
+}
+
 h1 {
-  font-size: 48px;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 8vw, 52px);
   font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.06;
 }
-p {
-  color: #50665e;
-  font:
-    16px / 1.6 ui-sans-serif,
-    system-ui,
-    sans-serif;
+
+.intro,
+.page-note {
+  color: #77738b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.intro {
+  margin: 13px 0 0;
+}
+
+.calculator {
+  padding: 21px;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 30px;
+  background: rgb(255 255 255 / 78%);
+  box-shadow:
+    0 26px 70px rgb(52 43 75 / 12%),
+    0 3px 12px rgb(52 43 75 / 5%);
+  backdrop-filter: blur(16px);
+}
+
+.calculator-topline {
+  display: flex;
+  min-height: 27px;
+  align-items: center;
+  gap: 9px;
+  color: #89869b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.calculator-mark {
+  color: #e27d61;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.online-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  color: #558c78;
+  font-size: 9px;
+}
+
+.online-indicator span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #79b89b;
+  box-shadow: 0 0 0 3px #79b89b25;
+}
+
+.display-panel {
+  display: flex;
+  min-height: 152px;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 15px 0 18px;
+  padding: 22px 24px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #292744;
+  color: #fffaf0;
+  text-align: right;
+}
+
+.display-caption {
+  color: #a7a4be;
+}
+
+.display-value {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  font-size: clamp(38px, 10vw, 58px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.18;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.key {
+  min-height: 65px;
+  border: 0;
+  border-radius: 18px;
+  font: inherit;
+  font-size: 22px;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    transform 140ms ease,
+    filter 140ms ease,
+    box-shadow 140ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key:hover {
+  filter: brightness(0.97);
+  transform: translateY(-2px);
+}
+
+.key:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.key:focus-visible {
+  outline: 3px solid #48416f;
+  outline-offset: 3px;
+}
+
+.key-number {
+  background: #f2eff8;
+  color: #34314e;
+}
+
+.key-utility {
+  background: #f8dfbe;
+  color: #815236;
+  font-size: 19px;
+}
+
+.key-operator {
+  background: #cce8da;
+  color: #386e5b;
+  font-size: 25px;
+}
+
+.key-equals {
+  background: #e78062;
+  box-shadow: 0 6px 12px rgb(218 112 83 / 20%);
+  color: white;
+  font-size: 26px;
+}
+
+.key-zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 27px;
+}
+
+.calculator-footer {
+  margin: 20px 0 0;
+  color: #9692a7;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.calculator-footer span {
+  margin-right: 4px;
+  color: #e78062;
+}
+
+.page-note {
+  margin: 22px 0 0;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  main {
+    width: min(100% - 28px, 420px);
+    padding-top: 40px;
+  }
+
+  .page-heading {
+    margin-bottom: 23px;
+  }
+
+  .calculator {
+    padding: 15px;
+    border-radius: 25px;
+  }
+
+  .display-panel {
+    min-height: 132px;
+    padding: 18px;
+  }
+
+  .keypad {
+    gap: 8px;
+  }
+
+  .key {
+    min-height: 59px;
+    border-radius: 16px;
+  }
 }

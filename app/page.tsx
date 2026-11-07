@@ -1,12 +1,15 @@
+import Calculator from "./calculator";
+
 export default function Home() {
   return (
     <main>
-      <p>NEW PROJECT</p>
-      <h1>Your app starts here.</h1>
-      <p>
-        Describe one feature in a GitHub issue, then assign it to Copilot to build remotely and open
-        a pull request.
-      </p>
+      <header className="page-heading">
+        <p className="eyebrow">A BRIGHTER WAY TO COUNT</p>
+        <h1>Make room for a little math.</h1>
+        <p className="intro">Simple sums, with a little extra color.</p>
+      </header>
+      <Calculator />
+      <p className="page-note">A little clarity for whatever you’re working out.</p>
     </main>
   );
 }
