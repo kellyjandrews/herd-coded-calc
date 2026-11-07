@@ -2,8 +2,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata = {
-  title: "New app",
-  description: "A new app built with the factory",
+  title: "Pocket Math | A Colorful Basic Calculator",
+  description: "Simple sums, with a little extra color.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
